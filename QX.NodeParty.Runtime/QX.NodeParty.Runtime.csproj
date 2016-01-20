@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DB86C80-179E-47B8-BD75-EA171CA40640}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QX.NodeParty.Runtime</RootNamespace>
+    <AssemblyName>QX.NodeParty.Runtime</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrap\CachedObjectFactoryProvider.cs" />
+    <Compile Include="Bootstrap\IObjectFactoryProvider.cs" />
+    <Compile Include="Bootstrap\NodeFactoryDescriptorByConfigurationAttributeLoader.cs" />
+    <Compile Include="Bootstrap\NodeFactoryDescriptorByTypeAttributeLoader.cs" />
+    <Compile Include="Bootstrap\NodeLoader.cs" />
+    <Compile Include="Bootstrap\FullFrameworkObjectFactoryProvider.cs" />
+    <Compile Include="Registry\NodeInstanceContainer.cs" />
+    <Compile Include="Registry\NodeInstanceContainerBuilder.cs" />
+    <Compile Include="Registry\NodeLocatorBuilder.cs" />
+    <Compile Include="Registry\Services\BaseServiceFactories\InstancePerRequestServiceFactoryNode.cs" />
+    <Compile Include="Registry\Services\BaseServiceFactories\SingleInstanceServiceFactoryNode.cs" />
+    <Compile Include="Registry\Services\ServiceFactoryNodeDescriptor.cs" />
+    <Compile Include="Registry\Services\ServiceLocator.cs" />
+    <Compile Include="Registry\LinkedAsyncNodeLocator.cs" />
+    <Compile Include="JsonConfig\JsonFileConfigurationLoader.cs" />
+    <Compile Include="JsonConfig\JsonNodeConfigurationData.cs" />
+    <Compile Include="JsonConfig\JsonConfigurationData.cs" />
+    <Compile Include="Bootstrap\FullFrameworkNodeRuntime.cs" />
+    <Compile Include="Bootstrap\RuntimeBootstrap.cs" />
+    <Compile Include="Bootstrap\NodeHostSettings.cs" />
+    <Compile Include="CommandLine\CommandLineArgumentAttribute.cs" />
+    <Compile Include="CommandLine\CommandLineArgumentBinding.cs" />
+    <Compile Include="CommandLine\CommandLineArgumentExtensions.cs" />
+    <Compile Include="CommandLine\CommandLineParser.cs" />
+    <Compile Include="CommandLine\MultiValueArgumentBinding.cs" />
+    <Compile Include="CommandLine\SingleValueArgumentBinding.cs" />
+    <Compile Include="CommandLine\SwitchArgumentBinding.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registry\Services\ServiceFactoryNode.cs" />
+    <Compile Include="Registry\Services\ServiceLocatorRegistry.cs" />
+    <Compile Include="Registry\Services\ServiceRegistrationInfo.cs" />
+    <Compile Include="Registry\StaticNodeLocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QX.NodeParty.Contracts\QX.NodeParty.Contracts.csproj">
+      <Project>{91de1db6-031a-471e-9e74-9282a8a33378}</Project>
+      <Name>QX.NodeParty.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="node.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

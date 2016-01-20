@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QX.NodeParty.Contracts", "QX.NodeParty.Contracts\QX.NodeParty.Contracts.csproj", "{91DE1DB6-031A-471E-9E74-9282A8A33378}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QX.NodeParty.Host.OwinSystemWeb", "QX.NodeParty.Host.OwinSystemWeb\QX.NodeParty.Host.OwinSystemWeb.csproj", "{E3645DB7-7C40-42EE-96B2-CCF0AD6DF777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QX.NodeParty.Logging.NLog", "QX.NodeParty.Logging.NLog\QX.NodeParty.Logging.NLog.csproj", "{5A6C3167-E019-45D1-AB53-F85831400B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QX.NodeParty.Runtime", "QX.NodeParty.Runtime\QX.NodeParty.Runtime.csproj", "{8DB86C80-179E-47B8-BD75-EA171CA40640}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QX.NodeParty.Runtime.Tests", "QX.NodeParty.Runtime.Tests\QX.NodeParty.Runtime.Tests.csproj", "{A108CE63-E167-453E-BC06-74DB4C918622}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C232D2DE-7F84-4721-9A35-B6A2F40F6042}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91DE1DB6-031A-471E-9E74-9282A8A33378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91DE1DB6-031A-471E-9E74-9282A8A33378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91DE1DB6-031A-471E-9E74-9282A8A33378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91DE1DB6-031A-471E-9E74-9282A8A33378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3645DB7-7C40-42EE-96B2-CCF0AD6DF777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3645DB7-7C40-42EE-96B2-CCF0AD6DF777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3645DB7-7C40-42EE-96B2-CCF0AD6DF777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3645DB7-7C40-42EE-96B2-CCF0AD6DF777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A6C3167-E019-45D1-AB53-F85831400B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A6C3167-E019-45D1-AB53-F85831400B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A6C3167-E019-45D1-AB53-F85831400B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A6C3167-E019-45D1-AB53-F85831400B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB86C80-179E-47B8-BD75-EA171CA40640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB86C80-179E-47B8-BD75-EA171CA40640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB86C80-179E-47B8-BD75-EA171CA40640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB86C80-179E-47B8-BD75-EA171CA40640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A108CE63-E167-453E-BC06-74DB4C918622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A108CE63-E167-453E-BC06-74DB4C918622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A108CE63-E167-453E-BC06-74DB4C918622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A108CE63-E167-453E-BC06-74DB4C918622}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
