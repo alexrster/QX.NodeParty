@@ -4,20 +4,14 @@ using System.Collections.Specialized;
 using System.Diagnostics;
 using QX.NodeParty.Runtime.CommandLine;
 
-namespace QX.NodeParty.Runtime.Bootstrap
+namespace QX.NodeParty.Runtime
 {
   public class NodeHostSettings
   {
-    [StringSingleArg("TypeLoader", "Type resolver class fully qualified type name", Aliases = new[] { "tr" })]
-    public string TypeLoader { get; set; }
-
-    [StringSingleArg("TypeActivator", "Type activator class fully qualified type name", Aliases = new[] { "ta", "activator" })]
-    public string TypeActivator { get; set; }
-
     [StringSingleArg("ConfigLoader", "Config Loader class fully qualified type name", Aliases = new[] { "cl" })]
     public string ConfigurationLoader { get; set; }
 
-    [StringSingleArg("InstanceId", "Instance ID of the root Node", Aliases = new[] { "i", "id" }, DefaultValue = "lxcrm")]
+    [StringSingleArg("InstanceId", "Instance ID of the root Node", Aliases = new[] { "i", "id" }, DefaultValue = null)]
     public string InstanceId { get; set; }
 
     [StringMultiArg("ConfigUri", "Configuration files URIs", Aliases = new[] { "c", "config", "cfg" })]

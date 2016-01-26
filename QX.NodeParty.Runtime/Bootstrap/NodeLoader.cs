@@ -20,12 +20,21 @@ namespace QX.NodeParty.Runtime.Bootstrap
     {
       foreach (var loader in _descriptorLoaders)
       {
-        Debug.Print("Try load Node factory descriptor using loader of type '{0}'", loader.GetType());
-        var descriptor = loader.LoadNodeFactoryDescriptor(configuration);
-        if (descriptor != null)
+        try
         {
-          Debug.Print("Successfully loaded Node factory descriptor of type '{0}'", descriptor.GetType());
-          return descriptor;
+          Debug.Print("Try load Node factory descriptor using loader of type '{0}'", loader.GetType());
+          var descriptor = loader.LoadNodeFactoryDescriptor(configuration);
+          if (descriptor != null)
+          {
+            Debug.Print("Successfully loaded Node factory descriptor of type '{0}'", descriptor.GetType());
+            return descriptor;
+          }
+
+        }
+        catch (Exception e)
+        {
+          Debug.WriteLine(e.Message);
+          return null;
         }
       }
 

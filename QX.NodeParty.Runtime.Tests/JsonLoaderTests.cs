@@ -14,21 +14,10 @@ namespace QX.NodeParty.Runtime.Tests
       var environment = new []
       {
         "/cl:QX.NodeParty.Runtime.JsonConfig.JsonFileConfigurationLoader, QX.NodeParty.Runtime.dll",
-        "/c:node.json",
-        "/i:mstest"
+        "/c:node.json"
       };
 
       var runtime = await RuntimeBootstrap.Start(environment);
-
-      //await runtime.StartAsync(environment);
-
-      //Assert.IsNotNull(runtime.NodeConfigData.Type);
-      //Assert.AreNotEqual(string.Empty, runtime.NodeConfigData.Type);
-
-      //Assert.IsNotNull(runtime.NodeConfigData.Nodes);
-      //Assert.IsTrue(runtime.NodeConfigData.Nodes.Any());
-
-      //Assert.IsNotNull(runtime.Node);
 
       var disposableRuntime = runtime as IDisposable;
       if (disposableRuntime != null)

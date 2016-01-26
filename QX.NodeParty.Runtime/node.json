@@ -1,16 +1,21 @@
 {
   "id": "NODE01",
-  "descriptor": "",
+  "descriptor": "QX.NodeParty.Runtime.Mocks.ModuleOneDescriptor, QX.NodeParty.Runtime.Mocks.dll, Version=1.0.0.0",
   "config": {
+    "nodeFactoryLoaders": [
+      "QX.NodeParty.Runtime.Bootstrap.NodeFactoryDescriptorByTypeAttributeLoader, QX.NodeParty.Runtime.dll, Version=1.0.0.0"
+    ]
   },
   "nodes": [
     {
+      "descriptor": "QX.NodeParty.Logging.NLog.ServiceNodeDescriptor, QX.NodeParty.Logging.NLog.dll",
+      "config": { },
+      "nodes": [ ]
+    },
+    {
       "descriptor": "QX.NodeParty.Communication.ServiceBus.NodeDescriptor, QX.NodeParty.Communication.ServiceBus.dll",
       "config": {
-        "connectionString": "",
-        "nodeFactoryLoaders": [
-          "QX.NodeParty.Runtime.Bootstrap.NodeFactoryDescriptorByTypeAttributeLoader, QX.NodeParty.Runtime.dll, Version=1.0.0.0"
-        ]
+        "connectionString": ""
       },
       "nodes": [
         {
@@ -22,11 +27,6 @@
           "nodes": [ ]
         }
       ]
-    },
-    {
-      "descriptor": "QX.NodeParty.Logging.NLog.ServiceNodeDescriptor, QX.NodeParty.Logging.NLog.dll",
-      "config": { },
-      "nodes": [ ]
     }
   ]
 }

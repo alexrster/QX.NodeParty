@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Bootstrap\CachedObjectFactoryProvider.cs" />
     <Compile Include="Bootstrap\IObjectFactoryProvider.cs" />
+    <Compile Include="Bootstrap\NodeBootstrapper.cs" />
     <Compile Include="Bootstrap\NodeFactoryDescriptorByConfigurationAttributeLoader.cs" />
     <Compile Include="Bootstrap\NodeFactoryDescriptorByTypeAttributeLoader.cs" />
     <Compile Include="Bootstrap\NodeLoader.cs" />
@@ -75,7 +76,7 @@
     <Compile Include="JsonConfig\JsonConfigurationData.cs" />
     <Compile Include="Bootstrap\FullFrameworkNodeRuntime.cs" />
     <Compile Include="Bootstrap\RuntimeBootstrap.cs" />
-    <Compile Include="Bootstrap\NodeHostSettings.cs" />
+    <Compile Include="NodeHostSettings.cs" />
     <Compile Include="CommandLine\CommandLineArgumentAttribute.cs" />
     <Compile Include="CommandLine\CommandLineArgumentBinding.cs" />
     <Compile Include="CommandLine\CommandLineArgumentExtensions.cs" />
@@ -84,7 +85,7 @@
     <Compile Include="CommandLine\SingleValueArgumentBinding.cs" />
     <Compile Include="CommandLine\SwitchArgumentBinding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registry\Services\ServiceFactoryNode.cs" />
+    <Compile Include="Registry\Services\ServiceContainerNode.cs" />
     <Compile Include="Registry\Services\ServiceLocatorRegistry.cs" />
     <Compile Include="Registry\Services\ServiceRegistrationInfo.cs" />
     <Compile Include="Registry\StaticNodeLocator.cs" />

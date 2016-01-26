@@ -10,25 +10,10 @@ namespace QX.NodeParty
     public const string UriScheme = @"urn-qx";
     public static readonly NodeUri LocalHost = new NodeUri($"{UriScheme}{SchemeDelimiter}.", UriKind.Absolute);
 
-    public string NodeId { get; private set; }
-
-    public bool IsNodeIdUri
-    {
-      get { return (IsAbsoluteUri && Segments.Length > 1 ) || !IsAbsoluteUri; }
-    }
-
-    public NodeUri(NodeUri nodeUri, string nodeId)
-      : base(nodeUri, nodeId)
-    {
-      if (string.IsNullOrWhiteSpace(nodeId))
-      {
-        throw new ArgumentNullException(nameof(nodeId));
-      }
-
-      NodeId = nodeId;
-    }
-
     public NodeUri(Uri uri) : this(uri.ToString(), UriKind.RelativeOrAbsolute)
+    { }
+
+    public NodeUri(NodeUri nodeUri, string nodeId) : base(nodeUri, nodeId)
     { }
 
     public NodeUri(string uriString, UriKind uriKind) : base(uriString, uriKind)
@@ -44,18 +29,7 @@ namespace QX.NodeParty
         {
           throw new UriFormatException("Node URI scheme invalid");
         }
-
-        NodeId = Segments.Skip(IsAbsoluteUri ? 2 : 0).LastOrDefault() ?? string.Empty;
       }
-      else
-      {
-        NodeId = ToString();
-      }
-    }
-
-    public NodeUri MakeRelativeUri(NodeUri uri)
-    {
-      return new NodeUri(base.MakeRelativeUri(uri));
     }
 
     public static NodeUri CreateLocalNodeUri(string localPath = null)

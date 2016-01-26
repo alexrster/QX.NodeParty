@@ -1,24 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{91DE1DB6-031A-471E-9E74-9282A8A33378}</ProjectGuid>
+    <ProjectGuid>{A6210BB6-F84E-43CC-88D4-0A24DA6A888F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QX.NodeParty</RootNamespace>
-    <AssemblyName>QX.NodeParty</AssemblyName>
+    <RootNamespace>QX.NodeParty.Runtime.Mocks</RootNamespace>
+    <AssemblyName>QX.NodeParty.Runtime.Mocks</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -28,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -36,17 +30,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,28 +40,26 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Composition\Bootstrap\BootstrapExtensions.cs" />
-    <Compile Include="Composition\Bootstrap\IConfigurationLoader.cs" />
-    <Compile Include="Composition\Bootstrap\INodeRuntime.cs" />
-    <Compile Include="Composition\INodeFactoryDescriptor.cs" />
-    <Compile Include="Composition\INodeFactoryDescriptorLoader.cs" />
-    <Compile Include="Composition\INodeLocator.cs" />
-    <Compile Include="Composition\INodeLocatorRegistry.cs" />
-    <Compile Include="Services\IServiceContainerNode.cs" />
-    <Compile Include="Services\IServiceLocator.cs" />
-    <Compile Include="Config\ConfigurationData.cs" />
-    <Compile Include="Config\NodeConfigurationData.cs" />
-    <Compile Include="Composition\INode.cs" />
-    <Compile Include="Composition\Base\Node.cs" />
+    <Compile Include="ModuleOneDescriptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NodeUri.cs" />
-    <Compile Include="NodeUriTypeConverter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\QX.NodeParty.Contracts\QX.NodeParty.Contracts.csproj">
+      <Project>{91de1db6-031a-471e-9e74-9282a8a33378}</Project>
+      <Name>QX.NodeParty.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QX.NodeParty.Logging.NLog\QX.NodeParty.Logging.NLog.csproj">
+      <Project>{5a6c3167-e019-45d1-ab53-f85831400b29}</Project>
+      <Name>QX.NodeParty.Logging.NLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QX.NodeParty.Runtime\QX.NodeParty.Runtime.csproj">
+      <Project>{8db86c80-179e-47b8-bd75-ea171ca40640}</Project>
+      <Name>QX.NodeParty.Runtime</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

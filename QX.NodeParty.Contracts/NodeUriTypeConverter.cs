@@ -13,23 +13,20 @@ namespace QX.NodeParty
     {
       if (value == null)
       {
-        var message = string.Format("Cannot convert null to '{0}'", TypeName);
-        Debug.Fail(message);
-        throw new ArgumentNullException("value", message);
+        throw new ArgumentNullException(nameof(value), $"Cannot convert null to '{TypeName}'");
       }
 
-      if (value is string)
+      var str = value as string;
+      if (str != null)
       {
-        return new NodeUri((string)value, UriKind.RelativeOrAbsolute);
+        return new NodeUri(str, UriKind.RelativeOrAbsolute);
       }
       else if (value is Uri)
       {
         return new NodeUri((Uri) value);
       }
 
-      var message2 = string.Format("Cannot convert null to '{0}'", TypeName);
-      Debug.Fail(message2);
-      throw new ArgumentNullException("value", message2);
+      throw new ArgumentNullException(nameof(value), $"Cannot convert null to '{TypeName}'");
     }
 
     public override bool IsValid(ITypeDescriptorContext context, object value)

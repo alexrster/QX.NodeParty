@@ -6,7 +6,7 @@ using QX.NodeParty.Composition;
 
 namespace QX.NodeParty.Runtime.Registry
 {
-  class NodeLocatorBuilder : INodeLocatorBuilder
+  class NodeLocatorBuilder : INodeLocatorRegistry
   {
     private readonly LinkedList<KeyValuePair<string, NodeInstanceContainerBuilder>> _nodes = new LinkedList<KeyValuePair<string, NodeInstanceContainerBuilder>>();
     private readonly TaskCompletionSource<INodeLocator> _nodeLocatorCompletionSource = new TaskCompletionSource<INodeLocator>();

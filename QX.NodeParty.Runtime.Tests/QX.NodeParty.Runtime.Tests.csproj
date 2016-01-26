@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -58,6 +62,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\QX.NodeParty.Runtime.Mocks\QX.NodeParty.Runtime.Mocks.csproj">
+      <Project>{a6210bb6-f84e-43cc-88d4-0a24da6a888f}</Project>
+      <Name>QX.NodeParty.Runtime.Mocks</Name>
+    </ProjectReference>
     <ProjectReference Include="..\QX.NodeParty.Runtime\QX.NodeParty.Runtime.csproj">
       <Project>{8db86c80-179e-47b8-bd75-ea171ca40640}</Project>
       <Name>QX.NodeParty.Runtime</Name>

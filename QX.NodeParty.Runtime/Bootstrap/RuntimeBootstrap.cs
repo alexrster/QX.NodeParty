@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -44,15 +45,13 @@ namespace QX.NodeParty.Runtime.Bootstrap
     {
       Debug.Indent();
       Debug.Print("Load Node Descriptors Loaders");
+
       //var nodeFactoryLoaders = configuration["nodeFactoryLoaders"].GetValue<IEnumerable<string>>()
       //  .Select(x => runtime.TypeLoader.LoadType(x))
       //  .Select(x => runtime.ObjectLoader.CreateInstance<INodeFactoryDescriptorLoader>(x))
       //  .ToArray();
 
       var nodeFactoryLoaders = new[] {new NodeFactoryDescriptorByTypeAttributeLoader(runtime)};
-
-      //Debug.Print("Create Root Node URI for instance '{0}'", rootUri);
-      //var rootUri = NodeUri.CreateLocalNodeUri(instanceId);
 
       Debug.Print("Create Node loader");
       var nodeLoader = new NodeFactoryLoader(nodeFactoryLoaders);

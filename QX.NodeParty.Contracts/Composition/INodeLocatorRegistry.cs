@@ -16,10 +16,10 @@ namespace QX.NodeParty.Composition
     void RegisterNodeFactory(string nodeId, Func<NodeUri, INodeLocator, Task<INode>> nodeFactory);
 
     /// <summary>
-    /// 
+    /// Create child registry
     /// </summary>
-    /// <param name="nodeId"></param>
-    /// <returns></returns>
+    /// <param name="nodeId">Child registry ID</param>
+    /// <returns>Child registry</returns>
     INodeLocatorRegistry CreateChildRegistry(string nodeId);
   }
 }
